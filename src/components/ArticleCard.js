@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import '../css/ArticleCard.css'
 import { Link } from '@reach/router'
+import Moment from 'react-moment'
 
 class ArticleCard extends Component {
 
@@ -13,7 +14,7 @@ class ArticleCard extends Component {
           <h1>{title}</h1>
           <p>Topic: {topic}</p>
           <p>Author: {author}</p>
-          <p>Created at: {created_at}</p>
+          <p>Posted: <Moment fromNow >{created_at}</Moment></p>
           <p>Comments({comment_count})</p>
           <p>votes ({votes})</p> 
 

@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import * as api from '../api'
 import '../css/Comment.css'
+import Moment from 'react-moment'
 
 class Comment extends Component {
   state = { 
@@ -22,7 +23,7 @@ class Comment extends Component {
             <p>{this.props.body}</p> <br/>
             <p>{body}</p>
             <p>Author: {author}</p> <br/>
-            <p>Created: {created_at}</p> <br/>
+            <p>Posted: <Moment fromNow >{created_at}</Moment></p> <br/>
             <p>Votes: {votes}</p>
             <i className="far fa-thumbs-up" type="button" name='1 'onClick ={() => this.vote(1,"articles",this.props.article_id, "/comments/", comments_id)}></i> <i className="far fa-thumbs-down" type="button" name='-1' onClick ={() => this.vote(-1,"articles",this.props.article_id, "/comments/", comments_id)}></i> <br/>
             {this.props.user === author &&

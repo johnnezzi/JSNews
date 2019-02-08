@@ -4,6 +4,7 @@ import '../css/App.css'
 import Comments from './Comments';
 import * as api from '../api'
 import { navigate } from "@reach/router"
+import Moment from 'react-moment'
 
 class Article extends Component {
   state = { 
@@ -41,7 +42,7 @@ class Article extends Component {
           <div className="meta">
             <p>Article id: {Article_id}</p> <br/>
             <p>Author: {Author}</p> <br/>
-            <p>Created: {Created}</p> <br/>
+            <p>Created: <Moment fromNow >{Created}</Moment></p> <br/>
             <p>Votes: {Votes}</p> <br/>
           </div>
           <div className="buttons" >
