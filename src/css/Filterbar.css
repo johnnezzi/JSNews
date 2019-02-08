@@ -1,0 +1,12 @@
+.filterbar {
+  margin: 1em;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  height: 8%;
+
+}
+
+.myButton.filter {
+  margin-top:0em;
+}

@@ -1,0 +1,26 @@
+.articleview {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    border: solid 2px darkgrey;
+    width: 75%;
+    text-align: center;
+    margin: 1em;
+    padding: 1em;
+    overflow: auto;
+}
+
+.body{
+  flex-grow: 3
+}
+
+.meta {
+  flex-grow: 1;
+  font-size: 0.75em;
+  margin-top: 0em;
+  margin-bottom: 0em;
+}
+
+.buttons {
+  flex-grow: 1
+}

@@ -1,0 +1,51 @@
+.App-Header {
+  grid-row: 1 / 2;
+  background-image: url(../css/images/roman-kraft-260082-unsplash.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.picture {
+  filter: grayscale(10%);
+  outline: 2px solid #633852;
+  outline-offset: -7px;
+}
+
+.overlay {
+  z-index: 1;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  overflow: auto;
+  top: 0px;
+  left: 0px;
+  background: rgba(6, 56, 82, 0.5);
+  /*can be anything, of course*/
+  opacity:
+}
+
+.yellow {
+  color: #E6DF44
+}
+
+.orange {
+  color: #F0810F
+}
+
+.tagline {
+  color: white;
+  font-family: Pacifico;
+}
+
+.headerText {
+  margin-left: 2em;
+}
+
+.mySite {
+  margin-bottom: 0em
+}
+
+.tagline {
+  margin-top: 0em
+}

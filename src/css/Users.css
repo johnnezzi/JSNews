@@ -1,0 +1,18 @@
+.usercard {
+      display:flex;
+      flex-direction: column;
+      justify-content: center;
+      border: solid 2px darkgrey;
+      width: 75%;
+      text-align: center;
+      margin: 1em auto;
+      padding: 1em;
+      /* overflow: auto; */
+}
+
+.img {
+  margin: auto;
+  height: 100px;
+  max-width: 100px;
+  min-width: 100px
+}

@@ -1,0 +1,26 @@
+
+
+.modal-topic {
+  display:flex;
+  flex-direction: column;
+  border: solid 2px darkgrey;
+  width: 75%;
+  text-align: center;
+  margin: 1em auto;
+  padding: 1em;
+  overflow: auto;
+}
+
+@media screen and (max-width: 600px) {
+  .myButton.submitModal{
+
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-left: 1em;
+  margin-right:1em;
+  width:90%;
+  padding:1em;
+
+}
+
+}

@@ -1,0 +1,9 @@
+.addarticle {
+  display: flex;
+  flex-direction: column;
+}
+
+.articleform {
+  display: flex;
+  flex-direction: column;
+}

@@ -1,0 +1,80 @@
+
+html, body {
+    margin: 0;
+    height: 100%;
+}
+
+
+.App {
+
+  display:grid;
+  grid-gap:0.3em;
+  grid-template-rows: 10em 1fr;
+  font-family: 'Roboto';
+}
+
+.App-body {
+  grid-row: 2 / 2;
+  display:grid;
+  grid-template-columns: 7em 1fr;
+}
+
+.App-rightbody {
+  margin-top: 0;
+  grid-column: 2 / 2;
+}
+
+
+
+.myButton {
+  -moz-box-shadow: inset 0px 1px 0px 0px #063752;
+  -webkit-box-shadow: inset 0px 1px 0px 0px #063752;
+  box-shadow: inset 0px 1px 0px 0px #063752;
+  background-color: #063752;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  border: 1px solid #124d77;
+  display: inline-block;
+  cursor: pointer;
+  color: #f0800f;
+  font-family: Arial;
+  font-size: 13px;
+  padding: 6px 24px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #154682;
+  margin: 1em;
+}
+
+.myButton:hover {
+  background-color: #105378;
+}
+
+.myButton:active {
+  position: relative;
+  top: 1px;
+}
+
+.mySite {
+  font-family: Monoton
+}
+
+select {
+  display: flex;
+  flex-direction: row;
+  /* General styling */
+  height: 2.5em;
+  width: 10em;
+  border-radius: 0;
+  padding-left: 10px;
+
+  /* Removes the default <select> styling */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  /* Positions background arrow image */
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAh0lEQVQ4T93TMQrCUAzG8V9x8QziiYSuXdzFC7h4AcELOPQAdXYovZCHEATlgQV5GFTe1ozJlz/kS1IpjKqw3wQBVyy++JI0y1GTe7DCBbMAckeNIQKk/BanALBB+16LtnDELoMcsM/BESDlz2heDR3WePwKSLo5eoxz3z6NNcFD+vu3ij14Aqz/DxGbKB7CAAAAAElFTkSuQmCC');
+  background-repeat: no-repeat;
+  background-position: 75px center;
+}

@@ -1,0 +1,9 @@
+.addcomment {
+  display: flex;
+  flex-direction: column;
+}
+
+.commentform {
+    display: flex;
+    flex-direction: column;
+}

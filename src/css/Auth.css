@@ -1,0 +1,19 @@
+.authForm {
+  display:flex;
+  flex-direction: column;
+  text-align:center;
+  margin-top:0em;
+  margin-left: 1em;
+  margin-right: 1em;
+  margin-bottom: 1em;
+  border: solid 2px darkgrey;
+  padding: 1em
+}
+
+.loginform {
+ margin:auto;
+}
+
+.userselector {
+  margin:auto
+}
