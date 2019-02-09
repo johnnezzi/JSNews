@@ -4,6 +4,8 @@ import '../css/Topics.css'
 import {Link} from '@reach/router'
 import * as api from '../api'
 import Modal from './modal';
+import AddTopic from './AddTopic';
+import TopicModal from './TopicModal';
 
 class Topics extends Component {
   state = { 
@@ -21,9 +23,7 @@ class Topics extends Component {
   render() { 
     return ( 
       <div className="App-rightbody">
-        <Modal topic="true" user={this.props.user} show={this.state.show} updateTopics={this.updateTopics}>
-          </Modal >
-          <input className= {["myButton" , "addTopic"].join(' ')} type="button" value="create Topic" onClick = {this.showModal}/>
+      <TopicModal topic="true" user={this.props.user} show={this.state.show} updateTopics={this.updateTopics}/>
         { this.state.topics.length && 
           this.state.topics.map(topic => {
           return <div key={topic.slug} className="topiccard">

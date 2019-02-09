@@ -33,6 +33,7 @@ class AddTopic extends Component {
     const {slug, description} = this.state;
     const { updateTopics } = this.props;
     updateTopics(slug, description)
+    this.setState({ show: false })
   }
 
 }

@@ -34,10 +34,13 @@ class CommentModal extends Component {
     event.preventDefault();
     const { body } = this.state
     const { updateComments, article_id, user } = this.props
+    if (!body) {
+      alert("Please complete Comment field before submiting")
+    } else {
     updateComments(user, body, article_id)
     this.setState({ show: false })
   }
-
+}
   render() {
     return (
       <>

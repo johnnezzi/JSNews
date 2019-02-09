@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import  Modal  from "react-bootstrap/Modal";
+import Modal  from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 
-class ArticleModal extends Component {
+class TopicModal extends Component {
   constructor(props, context) {
     super(props, context);
 
@@ -23,48 +23,49 @@ class ArticleModal extends Component {
   }
 
   handleChange = (e) => {
-      const { name, value } = e.target;
+    const { name, value } = e.target;
     this.setState({
       [name]: value,
     })
-  } 
+  }
 
   handleSubmit = (event) => {
     event.preventDefault();
-    const {title, body,} = this.state
-    const { updateArticles, user, slug } = this.props
-    if (!body || !title || !slug) {
-      alert("Please complete both Title and Article before submiting")
-     } else {
-    updateArticles(title, body, slug, user)
+    const {slug, description} = this.state;
+    const { updateTopics } = this.props;
+    if (!slug || !description) {
+      alert("Please complete both Title and Description before submiting")
+    } else {
+    updateTopics(slug, description)
     this.setState({ show: false })
   }
-  }
+}
+
   render() {
     return (
       <>
         <Button className="myButton" variant="primary" onClick={this.handleShow}>
-          Add Article...
+          Add Topic...
         </Button>
 
         <Modal show={this.state.show} onHide={this.handleClose}>
           <Modal.Header closeButton>
-            <Modal.Title>New Article...</Modal.Title>
+            <Modal.Title>New Topic...</Modal.Title>
           </Modal.Header>
           <Modal.Body> 
-            <form  className="articleform"vonSubmit={this.handleSubmit} action="">
-              Title: <input  onChange={this.handleChange}  name="title" type="text" size="30" /> <br/>
-              Article:   <textarea onChange={this.handleChange}  rows = "15" cols = "100" name = "body">
-              </textarea>
-            </form>
-          </Modal.Body>
-          <Modal.Footer>
+            <form className="modal-topic" onSubmit={this.handleSubmit} action="">
+            Title: <input onChange={this.handleChange} name="slug" type="text" size="30" required/> <br/>
+            description:   <input onChange={this.handleChange} name="description" type="text" size="100" required /> <br/>
             <Button className="myButton" variant="secondary" onClick={this.handleClose}>
               Cancel
             </Button>
             <Button className="myButton" variant="primary" type="submit" onClick={this.handleSubmit}>
-              Post Article..
+              Post Topic..
             </Button>
+        </form>
+          </Modal.Body>
+          <Modal.Footer>
+            
           </Modal.Footer>
         </Modal>
       </>
@@ -72,4 +73,4 @@ class ArticleModal extends Component {
   }
 }
  
-export default ArticleModal;
+export default TopicModal;
