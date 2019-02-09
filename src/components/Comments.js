@@ -4,6 +4,7 @@ import Comment from '../components/Comment.js'
 import FilterBar from './FilterBar';
 import Modal from './modal';
 import '../css/App.css'
+import CommentModal from './CommentModal';
 
 class Comments extends Component {
   state = { 
@@ -22,9 +23,9 @@ class Comments extends Component {
     const {user, article_id, comments_id} = this.props
     return ( 
       <div className ="comments">
-      <Modal comment="true" user={user} show={this.state.show} article_id={article_id} updateComments={this.updateComments}>
-        </Modal >
-        <input className="myButton" type="button" value="create comment" onClick = {this.showModal}/>
+      {/* <Modal comment="true" user={user} show={this.state.show} article_id={article_id} updateComments={this.updateComments}>
+        </Modal > */}
+        <CommentModal  user={user} show={this.state.show} article_id={article_id} updateComments={this.updateComments}/>
         {this.state.comments.map(comment => (
           <Comment updateDelComments={this.updateDelComments} key={comments_id} article_id={article_id} comment= {comment} user={user}/>
         ))}

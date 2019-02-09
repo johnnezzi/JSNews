@@ -3,8 +3,8 @@ import '../css/App.css'
 import ArticleCard from './ArticleCard';
 import * as api from '../api'
 import FilterBar from './FilterBar';
-import Modal from './modal';
 import Grid from '@material-ui/core/Grid';
+import Articlemodal from './ArticleModal';
 
 
 class Articles extends Component {
@@ -34,18 +34,14 @@ class Articles extends Component {
     const { articles, show } = this.state
     return ( 
       
-      < Grid container
-      direction = "column"
-      justify = "center"
-      alignItems = "center" >
+      <Grid container
+        direction = "column"
+        justify = "center"
+        alignItems = "center" >
         <FilterBar applyFilters={this.applyFilters} />
         {this.props.topic &&
-        <div>
-        <Modal slug={topic} updateArticles={this.updateArticles} article="true" user={user} show={show}>
-        </Modal >
-        <button className="myButton" type="button" value="create article" onClick = {this.showModal}> New Article
-        </button>
-        </div> }
+        <Articlemodal slug={topic} updateArticles={this.updateArticles} article="true" user={user}/>
+        }
         { articles.length &&
           articles.map(article => {
           return <ArticleCard key={article.article_id} title={article.title} topic={article.topic} author={article.author} created_at={article.created_at} votes={article.votes} comment_count={article.comment_count} article_id={article.article_id} user={user} updateDelArticles={this.updateDelArticles}/> 
