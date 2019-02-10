@@ -26,7 +26,7 @@ class Login extends Component {
           </div>}
           {this.state.loggedIn &&
             <div>
-            <div>You are logged in as {window.localStorage.getItem('user')}</div>
+            <div>Welcome back{window.localStorage.getItem('user')}</div>
             <form onSubmit={this.logout} action="">
             <button type='submit' onClick={this.logout} className= "myButton">Logout</button>
             </form>
@@ -40,7 +40,6 @@ class Login extends Component {
       userText: userInput,
       userErr: null,
     });
-    const { userText } = this.state
   }
 
   handleSubmit = event => {

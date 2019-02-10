@@ -9,7 +9,7 @@ import Users from './components/Users';
 import Article from './components/Article';
 import Articles from './components/Articles'
 import Notfound from './components/Notfound';
-import Grid from '@material-ui/core/Grid';
+
 
 class App extends Component {
 
@@ -30,7 +30,7 @@ class App extends Component {
               {/* <Auth user={this.state.user} setUser={this.setUser} default> */}
               <Topics path="/topics" />
               <Users path = "/users" />
-              <Article user={this.state.user} path="/articles/:article_id"/>
+              <Article user={window.localStorage.getItem('user')} path="/articles/:article_id"/>
               <Articles user={this.state.user} path ="/articles"/>
               <Articles user={this.state.user} path ="/topics/:topic/articles"/>
               {/* </Auth> */}

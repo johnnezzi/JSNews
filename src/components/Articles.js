@@ -31,7 +31,7 @@ class Articles extends Component {
   render() {
 
     const { topic, user } = this.props
-    const { articles, show } = this.state
+    const { articles } = this.state
     return ( 
       
       <Grid container
@@ -39,7 +39,7 @@ class Articles extends Component {
         justify = "center"
         alignItems = "center" >
         <FilterBar applyFilters={this.applyFilters} />
-        {this.props.topic &&
+        {this.props.topic && this.props.user &&
         <Articlemodal slug={topic} updateArticles={this.updateArticles} article="true" user={user}/>
         }
         { articles.length &&
@@ -72,9 +72,9 @@ class Articles extends Component {
   }
 
   updateDelArticles = (article_id) => {
+      console.log('article_id:', article_id)
       api.deleteArticle(article_id)
       .then(() => {
-        console.log("hello")
         this.setState(prevState => ({
           articles: [...prevState.articles.filter(article => article.article_id !== article_id)]
         }))
@@ -82,6 +82,7 @@ class Articles extends Component {
   }  
 
   applyFilters = (limit, sort_by, sort_order) => {
+    console.log('limit, sort_by, sort_order:', limit, sort_by, sort_order)
     const query = `?limit=${limit}&sort_by=${sort_by}&sort_order=${sort_order}`
       if (this.props.topic) {
         api.getQueriedArticlesByTopic(this.props.topic, query)

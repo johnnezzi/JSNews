@@ -53,14 +53,16 @@ class TopicModal extends Component {
             <Modal.Title>New Topic...</Modal.Title>
           </Modal.Header>
           <Modal.Body> 
-            <form className="modal-topic" onSubmit={this.handleSubmit} action="">
-            Title: <input onChange={this.handleChange} name="slug" type="text" size="30" required/> <br/>
-            description:   <input onChange={this.handleChange} name="description" type="text" size="100" required /> <br/>
-            <Button className="myButton" variant="secondary" onClick={this.handleClose}>
-              Cancel
-            </Button>
+            <form className="Modalform" onSubmit={this.handleSubmit} action="">
+            <input placeholder="Enter Title here...." onChange={this.handleChange} name="slug" type="text" size="30" required/> <br/>
+            <textarea placeholder="Enter a short description here..."onChange={this.handleChange} name="description" type="text" rows = "5" cols = "45" required > 
+            </textarea>
+            <br/>
             <Button className="myButton" variant="primary" type="submit" onClick={this.handleSubmit}>
               Post Topic..
+            </Button>
+            <Button className="myButton" variant="secondary" onClick={this.handleClose}>
+              Cancel
             </Button>
         </form>
           </Modal.Body>

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import  Modal  from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
+import '../css/Modals.css'
 
 class CommentModal extends Component {
   constructor(props, context) {
@@ -53,7 +54,7 @@ class CommentModal extends Component {
             <Modal.Title>New Comment...</Modal.Title>
           </Modal.Header>
           <Modal.Body> 
-            <form className="commentform" onSubmit={this.handleSubmit}  action="">
+            <form className="Modalform" onSubmit={this.handleSubmit}  action="">
               Comment:   <textarea onChange={this.handleChange} rows = "15" cols = "60" name = "body">
               </textarea>
         </form>

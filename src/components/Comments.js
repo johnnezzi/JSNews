@@ -21,7 +21,8 @@ class Comments extends Component {
     const {user, article_id, comments_id} = this.props
     return ( 
       <div className ="comments">
-        <CommentModal  user={user} show={this.state.show} article_id={article_id} updateComments={this.updateComments}/>
+      { this.props.user &&
+        <CommentModal  user={user} show={this.state.show} article_id={article_id} updateComments={this.updateComments}/>}
         {this.state.comments.map(comment => (
           <Comment updateDelComments={this.updateDelComments} key={comments_id} article_id={article_id} comment= {comment} user={user}/>
         ))}

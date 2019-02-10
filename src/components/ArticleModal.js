@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import  Modal  from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
+import '../css/Modals.css'
 
 class ArticleModal extends Component {
   constructor(props, context) {
@@ -52,9 +53,9 @@ class ArticleModal extends Component {
             <Modal.Title>New Article...</Modal.Title>
           </Modal.Header>
           <Modal.Body> 
-            <form  className="articleform"vonSubmit={this.handleSubmit} action="">
-              Title: <input  onChange={this.handleChange}  name="title" type="text" size="30" /> <br/>
-              Article:   <textarea onChange={this.handleChange}  rows = "15" cols = "100" name = "body">
+            <form  className="Modalform" onSubmit={this.handleSubmit} action="">
+              <input  placeholder= "Enter Article title here.."onChange={this.handleChange}  name="title" type="text" size="30" /> <br/>
+              <textarea placeholder="Enter Article Text here..."onChange={this.handleChange}  rows = "15" cols = "45" name = "body">
               </textarea>
             </form>
           </Modal.Body>
