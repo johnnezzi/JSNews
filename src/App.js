@@ -18,6 +18,8 @@ class App extends Component {
     user:null
   }
   render() {
+    const user = window.localStorage.getItem('user')
+    
     return (
       <div className="App">
         <Header />
@@ -26,13 +28,13 @@ class App extends Component {
           
           <div className = "App-rightbody" >
             <Router >
-              <Home user={this.state.user} path="/" />
-              <Auth user={this.state.user} setUser={this.setUser} default>
+              <Home user={user} path="/" />
+              <Auth user={user} setUser={this.setUser} default>
               <Topics path="/topics" />
               <Users path = "/users" />
-              <Article user={this.state.user} path="/articles/:article_id"/>
-              <Articles user={this.state.user} path ="/articles"/>
-              <Articles user={this.state.user} path ="/topics/:topic/articles"/>
+              <Article user={user} path="/articles/:article_id"/>
+              <Articles user={user} path ="/articles"/>
+              <Articles user={user} path ="/topics/:topic/articles"/>
               </Auth>
           </Router>
           </div>
@@ -43,9 +45,7 @@ class App extends Component {
   }
 
   setUser = (user) => {
-    this.setState({
-      user
-    })
+    window.localStorage.setItem('user', JSON.stringify(user))
   }
 
 };

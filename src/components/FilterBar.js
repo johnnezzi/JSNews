@@ -16,9 +16,8 @@ class FilterBar extends Component  {
       
       <form className = "filterbar" onSubmit={this.handleSubmit}>
 
-        <span>Limit: </span>
-          <select name="limit" onChange={this.handleChange}>
-          <option value="5">select..</option>
+        <select name="limit" onChange={this.handleChange}>
+          <option value="5">Articles</option>
           <option value="5">5</option>
           <option value="10">10</option>
           <option value="20">20</option>
@@ -28,19 +27,17 @@ class FilterBar extends Component  {
           <option value="80">80</option>
           <option value="100">100</option>
         </select>
-        <span>Sort by: </span>
+        
         <select name="sort_by" onChange={this.handleChange}>
-          <option> select.. </option>
-          <option value="created_at">Created</option>
-          <option value="votes">Votes</option>
+          <option> Sort </option>
+          <option value="created_at">New</option>
+          <option value="votes">Popular</option>
           <option value = "topic"> Topic</option>
-          <option value="created_at">Created</option>
           <option value="title">Title</option>
-          <option value = "article_id"> Article ID</option>
         </select>
-        <span>Sort: </span>
+  
         <select name="sort_order" onChange={this.handleChange}>
-          <option> select.. </option>
+          <option> Order </option>
           <option value="asc">Ascending</option>
           <option value="desc">Descending</option>
         </select>

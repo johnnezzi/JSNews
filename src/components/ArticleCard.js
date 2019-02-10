@@ -15,8 +15,8 @@ class ArticleCard extends Component {
           <p>Topic: {topic}</p>
           <p>Author: {author}</p>
           <p>Posted: <Moment fromNow >{created_at}</Moment></p>
-          <p>Comments({comment_count})</p>
-          <p>votes ({votes})</p> 
+          <p>Comments: {comment_count}</p>
+          <p>votes:  {votes}</p> 
 
           <Link to={`/articles/${article_id}`}><button className="myButton">Read Article....</button> </Link>
           {user === author &&
