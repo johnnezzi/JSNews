@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import '../css/Header.css'
+import Login from './Login';
 
 class Header extends Component {
   state = {  }
@@ -12,8 +13,8 @@ class Header extends Component {
           <h3 className="tagline">your news...your views.</h3>
         </div>
         
-        <div className="overlay"> </div>
-        
+        {/* <div className="overlay"> </div> */}
+        <Login removeUser={this.props.removeUser} setUser={this.props.setUser}/>
       </div>
      );
   }

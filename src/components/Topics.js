@@ -3,8 +3,6 @@ import '../css/App.css'
 import '../css/Topics.css'
 import {Link} from '@reach/router'
 import * as api from '../api'
-import Modal from './modal';
-import AddTopic from './AddTopic';
 import TopicModal from './TopicModal';
 
 class Topics extends Component {
