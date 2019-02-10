@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import '../css/Header.css'
 
 class Login extends Component {
 
@@ -8,11 +9,11 @@ class Login extends Component {
 
   render() { 
     return ( 
-      <div>
+      <div className="loginbox">
         {!this.state.loggedIn &&
           <div className="loginbox">
             <form className="loginform" onSubmit={this.handleSubmit}>
-              <select className="userselector" onChange={this.handleChange} name="Users" id="users">
+              <select className="userselectorjn" onChange={this.handleChange} name="Users" id="users">
                 <option> .............. </option>
                 <option value="tickle122">Tom Tickle</option>
                 <option value="grumpy19">Paul Grump</option>
@@ -21,17 +22,15 @@ class Login extends Component {
                 <option value = "weegembump">Gemma Bump</option>
                 <option value = "jessjelly">Jess Kelly</option>
               </select>
-              <button className= "myButton" type="submit" >Log in.....</button>
+              <button className= "myloginButton" type="submit" >Login</button>
             </form>
           </div>}
           {this.state.loggedIn &&
-            <div>
-            <div>Welcome back{window.localStorage.getItem('user')}</div>
-            <form onSubmit={this.logout} action="">
-            <button type='submit' onClick={this.logout} className= "myButton">Logout</button>
-            </form>
-          </div>}
-        </div>
+          <form className="loginform" onSubmit={this.logout} action="">
+            <div className="welcome" >Welcome back {window.localStorage.getItem('user')}!!</div>
+            <button type='submit' onClick={this.logout} className= "myloginButton">Logout</button>
+            </form>}
+          </div>
      );
   }
    handleChange = event => {
