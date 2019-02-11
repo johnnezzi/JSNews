@@ -13,7 +13,8 @@ class Article extends Component {
     Created: null,
     Votes:null,
     Body:null,
-    isLoading:true
+    isLoading:true,
+    voteMod: 0
   }
 
   async componentDidMount() {
@@ -25,7 +26,8 @@ class Article extends Component {
       Votes: article.votes,
       Body: article.body,
       isLoading: false,
-      isDeleted: false
+      isDeleted: false,
+      
     })
   }
 
@@ -46,7 +48,7 @@ class Article extends Component {
             <p>Votes: {Votes}</p> <br/>
           </div>
           <div className="buttons" >
-            <i className="far fa-thumbs-up" type="button" name='1 'onClick ={() => this.vote(1,"articles", Article_id)}></i> <i className="far fa-thumbs-down" type="button" name='-1' onClick ={() => this.vote(-1,"articles", Article_id)}></i> <br/>
+            <button className="far fa-thumbs-up" type="button" name='1 'onClick ={() => this.vote(1,"articles", Article_id)}disabled = {this.state.voteMod > 0}></button> <button className="far fa-thumbs-down" type="button" name='-1' onClick ={() => this.vote(-1,"articles", Article_id)}disabled = {this.state.voteMod < 0} ></button> <br/>
             {this.props.user === Author &&
             <button className="myButton" onClick={this.handleClick}>Delete</button>}
             <Comments  user={this.props.user} article_id={this.props.article_id}/> 
@@ -59,7 +61,10 @@ class Article extends Component {
   vote = (voteChange, endpoint, id) => {
     api.voteArticle(voteChange, endpoint, id)
     .then(() => {
-      this.setState(prevState => ({ Votes: prevState.Votes + voteChange }))
+      this.setState(prevState => ({ 
+        Votes: prevState.Votes + voteChange,
+        voteMod: prevState.voteMod + voteChange
+       }))
     })
   };
 
