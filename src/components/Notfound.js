@@ -2,7 +2,7 @@ import React from 'react';
 
 const Notfound = () => {
   return ( 
-    <h1>Page Not Found</h1>
+    <h2>Sorry....there seems to be a problem, i cant find what you are looking for....please try again.</h2>
    );
 }
  

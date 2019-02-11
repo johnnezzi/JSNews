@@ -5,6 +5,7 @@ import * as api from '../api'
 import FilterBar from './FilterBar';
 import Grid from '@material-ui/core/Grid';
 import Articlemodal from './ArticleModal';
+import { Navigate } from '@reach/router'
 
 
 class Articles extends Component {
@@ -16,17 +17,20 @@ class Articles extends Component {
   async componentDidMount() {
 
     if (this.props.topic) {
-      const articles = await api.getArticlesByTopic(this.props.topic)
-      this.setState({
+      api.getArticlesByTopic(this.props.topic)
+        .then((articles) => (this.setState({
         articles: articles
-            })
-    } else {
-      const articles = await api.getArticles()
-      this.setState({
-        articles: articles
-            })
+            })))
+        .catch(err => Navigate="./notfound")
+        } else {
+      api.getArticles()
+        .then((articles) => (this.setState({
+          articles: articles
+      }))).catch(err => Navigate = "./notfound");
     }
-  }
+      
+}
+  
 
   render() {
 

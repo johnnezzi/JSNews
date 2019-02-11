@@ -33,8 +33,10 @@ class App extends Component {
               <Article user={window.localStorage.getItem('user')} path="/articles/:article_id"/>
               <Articles user={this.state.user} path ="/articles"/>
               <Articles user={this.state.user} path ="/topics/:topic/articles"/>
+              <Notfound path = "/notfound" />
               {/* </Auth> */}
           </Router>
+          <Notfound path="/notfound"/>
           </div>
           
         </div>

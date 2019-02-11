@@ -4,6 +4,7 @@ import '../css/Topics.css'
 import {Link} from '@reach/router'
 import * as api from '../api'
 import TopicModal from './TopicModal';
+import {Navigate} from '@reach/router'
 
 class Topics extends Component {
   state = { 
@@ -12,10 +13,14 @@ class Topics extends Component {
   }
 
   async componentDidMount() {
-  const topics = await api.getTopics()
+    api.getTopics()
+    .then(topics => {
       this.setState({
         topics: topics
       })
+    })
+    .catch(err => Navigate = "./notfound")
+      
   }
 
   render() { 
