@@ -17,14 +17,15 @@ class Comments extends Component {
     })
   }
 
-  render() { 
+  render() {
+    console.log('rendering')
     const {user, article_id, comments_id} = this.props
     return ( 
       <div className ="comments">
       { this.props.user &&
         <CommentModal  user={user} show={this.state.show} article_id={article_id} updateComments={this.updateComments}/>}
         {this.state.comments.map(comment => (
-          <Comment updateDelComments={this.updateDelComments} key={comments_id} article_id={article_id} comment= {comment} user={user}/>
+          <Comment key={comments_id} updateDelComments={this.updateDelComments} key={comments_id} article_id={article_id} comment= {comment} user={user}/>
         ))}
       </div>
         )
@@ -51,12 +52,13 @@ class Comments extends Component {
     })
 }
   updateDelComments = (article_id, comments_id) => {
+    console.log(comments_id)
     api.deleteComment(article_id, comments_id)
       .then(() => {
         this.setState(prevState => ({
           comments: [...prevState.comments.filter(comment => comment.comments_id !== comments_id)]
           
-        }))
+        }), () => console.log(this.state.comments))
       })
   }
 } 

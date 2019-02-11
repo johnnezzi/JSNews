@@ -72,9 +72,8 @@ class Articles extends Component {
   }
 
   updateDelArticles = (article_id) => {
-      console.log('article_id:', article_id)
       api.deleteArticle(article_id)
-      .then(() => {
+      .then((article) => {
         this.setState(prevState => ({
           articles: [...prevState.articles.filter(article => article.article_id !== article_id)]
         }))

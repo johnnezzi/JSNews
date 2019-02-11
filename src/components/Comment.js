@@ -5,7 +5,8 @@ import Moment from 'react-moment'
 
 class Comment extends Component {
   state = { 
-      comment : {}
+      comment : {},
+      voteMod: 0
    }
 
    componentDidMount() {
@@ -24,8 +25,9 @@ class Comment extends Component {
             <p>{body}</p>
             <p>Author: {author}</p> <br/>
             <p>Posted: <Moment fromNow >{created_at}</Moment></p> <br/>
-            <p>Votes: {votes}</p>
-            <i className="far fa-thumbs-up" type="button" name='1 'onClick ={() => this.vote(1,"articles",this.props.article_id, "/comments/", comments_id)}></i> <i className="far fa-thumbs-down" type="button" name='-1' onClick ={() => this.vote(-1,"articles",this.props.article_id, "/comments/", comments_id)}></i> <br/>
+            <p>Votes: {votes + this.state.voteMod}</p>
+            
+            <button className="far fa-thumbs-up" type="button" name='1 'onClick ={() => this.vote(1,"articles",this.props.article_id, "/comments/", comments_id)} disabled = {this.state.voteMod > 0}  ></button> <button className="far fa-thumbs-down" type="button" name='-1' onClick ={() => this.vote(-1,"articles",this.props.article_id, "/comments/", comments_id)} disabled = {this.state.voteMod < 0} ></button> <br/>
             {this.props.user === author &&
           <button className="myButton" onClick={this.handleClick}>Delete</button>}
 
@@ -40,8 +42,9 @@ class Comment extends Component {
         this.setState(prevState => ({
           comment: {
             ...prevState.comment,
-            votes: prevState.comment.votes + voteChange
-            }
+            votes: prevState.comment.votes
+            },
+            voteMod: prevState.voteMod + voteChange
         }))
       })
   };
