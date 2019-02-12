@@ -4,7 +4,8 @@ import '../css/Topics.css'
 import {Link} from '@reach/router'
 import * as api from '../api'
 import TopicModal from './TopicModal';
-import {navigate} from '@reach/router'
+import {navigate} from '@reach/router';
+import Grid from '@material-ui/core/Grid';
 
 class Topics extends Component {
   state = { 
@@ -25,6 +26,7 @@ class Topics extends Component {
 
   render() { 
     return ( 
+
       <div className="App-rightbody">
       <TopicModal topic="true" user={this.props.user} show={this.state.show} updateTopics={this.updateTopics}/>
         { this.state.topics.length && 
@@ -36,6 +38,7 @@ class Topics extends Component {
                 </div>
         })}
       </div>
+ 
     );
   }
 

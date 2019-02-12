@@ -40,7 +40,7 @@ class FilterBar extends Component  {
           <option value="asc">Ascending</option>
           <option value="desc">Descending</option>
         </select>
-        { this.state.sort_by && this.state.sort_order &&
+        { this.state.sort_by && this.state.sort_order && this.state.limit &&
         <button className= {["myButton" , "filter"].join(' ')} type="submit">Apply..</button> }
       </form>  
     
