@@ -4,7 +4,7 @@ import '../css/Topics.css'
 import {Link} from '@reach/router'
 import * as api from '../api'
 import TopicModal from './TopicModal';
-import {Navigate} from '@reach/router'
+import {navigate} from '@reach/router'
 
 class Topics extends Component {
   state = { 
@@ -19,7 +19,7 @@ class Topics extends Component {
         topics: topics
       })
     })
-    .catch(err => Navigate = "./notfound")
+    .catch(err => navigate('/notfound'))
       
   }
 

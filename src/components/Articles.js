@@ -5,7 +5,7 @@ import * as api from '../api'
 import FilterBar from './FilterBar';
 import Grid from '@material-ui/core/Grid';
 import Articlemodal from './ArticleModal';
-import { Navigate } from '@reach/router'
+import { navigate } from '@reach/router'
 
 
 class Articles extends Component {
@@ -21,12 +21,12 @@ class Articles extends Component {
         .then((articles) => (this.setState({
         articles: articles
             })))
-        .catch(err => Navigate="./notfound")
+        .catch(err => navigate('/notfound'))
         } else {
       api.getArticles()
         .then((articles) => (this.setState({
           articles: articles
-      }))).catch(err => Navigate = "./notfound");
+      }))).catch(err => navigate('/notfound'));
     }
       
 }
