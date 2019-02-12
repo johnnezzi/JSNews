@@ -6,26 +6,29 @@ import FilterBar from './FilterBar';
 import Grid from '@material-ui/core/Grid';
 import Articlemodal from './ArticleModal';
 import { navigate } from '@reach/router'
+import Loading from './Loading';
 
 
 class Articles extends Component {
   state = { 
     articles :[],
     show: false,
+    isLoading:true
     }
 
   async componentDidMount() {
-
     if (this.props.topic) {
       api.getArticlesByTopic(this.props.topic)
         .then((articles) => (this.setState({
-        articles: articles
+        articles: articles,
+        isLoading: false,
             })))
         .catch(err => navigate('/notfound'))
         } else {
       api.getArticles()
         .then((articles) => (this.setState({
-          articles: articles
+          articles: articles,
+          isLoading: false,
       }))).catch(err => navigate('/notfound'));
     }
       
@@ -35,13 +38,17 @@ class Articles extends Component {
   render() {
 
     const { topic, user } = this.props
-    const { articles } = this.state
+    const { articles, isLoading } = this.state
     return ( 
+      
       
       <Grid container
         direction = "column"
         justify = "center"
         alignItems = "center" >
+        {isLoading &&
+        <Loading/>
+        }
         <FilterBar applyFilters={this.applyFilters} />
         {this.props.topic && this.props.user &&
         <Articlemodal slug={topic} updateArticles={this.updateArticles} article="true" user={user}/>
