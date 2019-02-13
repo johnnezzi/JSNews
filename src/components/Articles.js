@@ -53,7 +53,7 @@ class Articles extends Component {
         {this.props.topic && this.props.user &&
         <Articlemodal slug={topic} updateArticles={this.updateArticles} article="true" user={user}/>
         }
-        { articles.length &&
+        { articles[1] &&
           articles.map(article => {
           return <ArticleCard key={article.article_id} title={article.title} topic={article.topic} author={article.author} created_at={article.created_at} votes={article.votes} comment_count={article.comment_count} article_id={article.article_id} user={user} updateDelArticles={this.updateDelArticles}/> 
         })}

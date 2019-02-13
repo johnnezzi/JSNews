@@ -17,7 +17,7 @@ class Users extends Component {
   render() { 
     return ( 
       <div className="App-rightbody">
-        { this.state.users.length && 
+        { this.state.users[0] && 
           this.state.users.map(user => {
           return <div key={user.username} className="usercard">
                   <img className="img" src={user.avatar_url} alt="User"></img> 

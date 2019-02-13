@@ -13,8 +13,8 @@ class ArticleCard extends Component {
         <div className="ArticleCard-MetaColumn">
           <h1>{title}</h1>
           <p>Topic: {topic}</p>
-          <p>Author: {author}</p>
-          <p>Posted: <Moment fromNow >{created_at}</Moment></p>
+          <p>{author}</p>
+          <p><Moment fromNow >{created_at}</Moment></p>
           <p>Comments: {comment_count}</p>
           <p>votes:  {votes}</p> 
 

@@ -29,7 +29,7 @@ class Topics extends Component {
 
       <div className="App-rightbody">
       <TopicModal topic="true" user={this.props.user} show={this.state.show} updateTopics={this.updateTopics}/>
-        { this.state.topics.length && 
+        { this.state.topics[0] && 
           this.state.topics.map(topic => {
           return <div key={topic.slug} className="topiccard">
                   <h2>{topic.slug}</h2> <br/>

@@ -42,9 +42,8 @@ class Article extends Component {
             <p>{Body}</p> 
           </div> <br/>
           <div className="meta">
-            <p>Article id: {Article_id}</p> <br/>
-            <p>Author: {Author}</p> <br/>
-            <p>Created: <Moment fromNow >{Created}</Moment></p> <br/>
+            <p>{Author}</p> <br/>
+            <p> <Moment fromNow >{Created}</Moment></p> <br/>
             <p>Votes: {Votes}</p> <br/>
           </div>
           <div className="buttons" >
