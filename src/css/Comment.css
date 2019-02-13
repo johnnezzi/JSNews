@@ -2,16 +2,22 @@
   display:flex;
   flex-direction: row-reverse;
   border: solid 2px darkgrey;
-  background-color: beige;
+  background-color: lightgray;
   margin-bottom: 1em;
   border-radius: 10px;
+
 }
 
 .metadata {
   border-right: solid 2px darkgrey;
   min-width: 25%;
+  width:25%;
 }
 
 .meta {
   margin-bottom: 0.00em;
+}
+
+.body {
+  margin: auto
 }

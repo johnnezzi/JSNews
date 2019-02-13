@@ -21,8 +21,7 @@ class Comment extends Component {
     return ( 
       <>
       <div className="comment">
-            <p>{this.props.body}</p> <br/>
-            <p>{body}</p>
+            <p className="body" >{body}</p>
             <div className="metadata" >
             <p className="meta" >Author: {author}</p> <br/>
             <p className="meta" >Posted: <Moment fromNow >{created_at}</Moment></p> <br/>
@@ -31,7 +30,7 @@ class Comment extends Component {
             <button className="far fa-thumbs-up" type="button" name='1 'onClick ={() => this.vote(1,"articles",this.props.article_id, "/comments/", comments_id)} disabled = {this.state.voteMod > 0}  ></button> <button className="far fa-thumbs-down" type="button" name='-1' onClick ={() => this.vote(-1,"articles",this.props.article_id, "/comments/", comments_id)} disabled = {this.state.voteMod < 0} ></button> <br/>
             {this.props.user === author &&
           <button className="myButton" onClick={this.handleClick}>Delete</button>}
-          < /div>
+          </div>  
       </div>
       </>
     );
