@@ -14,15 +14,8 @@ To add an article click through to the topics page and pick a topic, as long as 
 
 
 ## Installing dependancies
-To install the list of dependancies listed below we must run npm install in the terminal before trying to run the app.
 
-Minimum versions
-The minimum versions needed to run my app are as follows:
-
-    "axios": "^0.18.0",
-    "react": "^16.7.0",
-    "react-dom": "^16.7.0",
-    "react-scripts": "2.1.3",
+To install the list of dependancies please run npm install in the terminal before trying to run the app.
 
 Running locally
 To run the app locally you can use the npm start script in the terminal which will run the site on a local host server, to view this in the browser you must open (http://localhost:3000).
