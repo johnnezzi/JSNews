@@ -1,5 +1,4 @@
-import React,{Component} from 'react';
-import Articles from './Articles';
+import React,{ Component } from 'react';
 import '../css/home.css'
 import NewArticles from './NewArticles';
 import MostPopArticles from './MostPopArticles';
