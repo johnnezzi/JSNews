@@ -23,7 +23,6 @@ The minimum versions needed to run my app are as follows:
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
     "react-scripts": "2.1.3",
-    "terser": "^3.14.1"
 
 Running locally
 To run the app locally you can use the npm start script in the terminal which will run the site on a local host server, to view this in the browser you must open (http://localhost:3000).
