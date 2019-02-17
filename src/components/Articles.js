@@ -92,7 +92,6 @@ class Articles extends Component {
   }  
 
   applyFilters = (limit, sort_by, sort_order) => {
-    console.log('limit, sort_by, sort_order:', limit, sort_by, sort_order)
     const query = `?limit=${limit}&sort_by=${sort_by}&sort_order=${sort_order}`
       if (this.props.topic) {
         api.getQueriedArticlesByTopic(this.props.topic, query)

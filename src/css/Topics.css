@@ -1,4 +1,6 @@
 .topiccard {
+  background-color: whitesmoke;
+  font-family: 'PT Serif',serif;
   display:flex;
   flex-direction: column;
   justify-content: center;
@@ -8,7 +10,7 @@
   margin: 1em auto;
   padding: 1em;
   overflow: auto;
-   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
    0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
